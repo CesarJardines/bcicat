@@ -1,0 +1,29 @@
+{% extends "estudiante/base.html" %}
+
+{% load static %}
+
+{% block navbar %}
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+        class="navbar-toggler-icon"></span></button>
+<div class="d-flex justify-content-center">
+    {% block header_ctxt %}
+
+    {% endblock %}
+</div>
+<div class="collapse navbar-collapse navbarSupportedContent" id="navbarSupportedContent">
+    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        {% block navbar_ctxt %}
+        <li class="nav-item"><a class="nav-link" aria-current="page" href="{% url 'AMCE:EstMisGrupos' %}">Mis Grupos</a>
+        </li>
+        {% endblock %}
+        <li class="nav-item"><a class="nav-link" aria-current="page" href="{% url 'logout' %}">Cerrar Sesión</a></li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block content %}
+    {% block inner_content %}
+
+    {% endblock %}
+{% endblock %}

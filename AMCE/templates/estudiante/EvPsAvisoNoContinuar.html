@@ -1,0 +1,45 @@
+{% extends "estudiante/base_formpage.html" %}
+
+{% load static %}
+
+{% block title %}
+Aviso
+{% endblock %}
+
+{% block header_ctxt %}
+<a class="nav-bar-btn" href="{% url 'AMCE:EstMisGrupos' %}" id="inscribir_grupo"> <img
+        src="{% static 'assets/images/bt_grupos.png'%}"></a>
+{% endblock %}
+
+{% block navbar %}
+<a class="navbar-brand" href="{% url 'AMCE:EstMisGrupos' %}"> <i style="color: white; width: 20%; height: 20%;"
+        class="bi bi-stopwatch"></i> </a>
+
+{% endblock %}
+
+{% block content %}
+
+<center>
+    <div class="text-center wait-warning mw-90 ">
+        <h1><b>Aviso</b></h1>
+        <p>Tu equipo aún no termina de evaluar las preguntas secundarias, regresa más tarde. </p>
+        <center>
+            <a name="profesor" class="button-format" href="{% url 'AMCE:EstMisGrupos' %}">Entendido</a>
+        </center>
+    </div>
+</center>
+
+{% endblock content %}
+
+
+{% block scripts %}
+<script>
+    $(document).ready(function () { $("#myModal").appendTo("body").modal('show'); });
+    $("#myModal").css("z-index", "1500");
+
+</script>
+{% endblock %}
+
+
+
+

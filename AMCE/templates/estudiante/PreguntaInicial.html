@@ -1,0 +1,60 @@
+{% extends "estudiante/base_mainpage.html" %}
+
+{% load static %}
+
+{% block extra-css %}
+
+{% endblock %}
+{% block title %}
+Pregunta Inicial
+{% endblock %}
+
+{% block header_ctxt %}
+<div class="nav-bar-title navbar-brand ml-3 d-flex w-full justify-content-center"> Pregunta Inicial</div>
+<a class=""></a>
+{% endblock %}
+
+{% block inner_content %}
+
+<div class="container-content">
+    <center class="mt-4">
+        <h1> Tema: {{temaPreguntaInicial.nombre_tema}} </h1>
+    </center>
+    <div class="text-center">
+        <h2>Plantea una pregunta inicial</h2>
+        <h2 class="popup h mt-2" id="myBtn">Ejemplo</h2>
+    </div>
+    <div class="row gx-1 gx-lg-1 row-cols-1 row-cols-md-1 row-cols-xl-1 justify-content mt-3">
+        <form method="post" class="input-form">
+            {% csrf_token %}
+            {{ form }}
+            <center><button type="submit" class="button-format mt-4">Continuar al siguiente paso</button></center>
+        </form>
+    </div>
+    <!-- Modal a desplegar de ingresar código de clase -->
+    <div id="myModal" class="modal">
+        <!-- contenido del modal (ingresar código) -->
+        <div class="h-full d-flex flex-column  justify-content-center">
+            <div class="modal-content">
+                <div class="container">
+                    <span class="close">&times;</span><br>
+                    <h2>Pregunta inicial</h2>
+                    <h3>Ejemplos</h3>
+                    <ul>
+                        <li>¿Qué es un Ciclón Tropical? </li>
+                        <li>¿En qué fecha inició la Segunda Guerra Mundial? </li>
+                        <li>¿En dónde nació Miguel de Cervantes Saavedra? </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<!-- Core theme JS-->
+<script src="{%static 'js/MG1.js' %}"></script>
+<!-- JS para modal del ingresar código de clase-->
+<script src="{%static 'js/modal.js' %}"></script>
+{% endblock %}

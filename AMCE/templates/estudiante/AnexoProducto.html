@@ -1,0 +1,74 @@
+{% extends "estudiante/base_mainpage.html" %}
+
+{% load static %}
+
+{% block title %}
+Pregunta Inicial
+{% endblock %}
+
+{% block header_ctxt %}
+<div class="nav-bar-title navbar-brand ml-3"> Anexar trabajo formal</div>
+<a class=""></a>
+{% endblock %}
+
+{% block inner_content %}
+<div class="container-content">
+    <h1 class="text-center mt-4">¡Subamos el trabajo!</h1>
+    <p class="mt-4">Una vez terminado el diagrama, solo uno integrante del equipo debera nombrarlo y subirlo a la
+        plataforma.</p>
+    <form>
+        <label for="">Titulo del trabajo</label>
+        <input type="text" class="mt-3">
+        <div class="form-group">
+            <label for="exampleFormControlFile1" class="mt-3">Selecciona el archivo a subir</label>
+            <input type="file" class="form-control-file mt-3" id="exampleFormControlFile1">
+        </div>
+        <div class="d-flex justify-content-center mt-4">
+            <button type="submit" class="button-format">Continuar al siguente paso</button>
+        </div>
+    </form>
+
+
+
+
+</div>
+<!-- Modal a desplegar de ingresar código de clase -->
+
+
+<div id="myModal" class="modal" id="id01">
+    <!-- contenido del modal (ingresar código) -->
+    <div class="h-full d-flex flex-column  justify-content-center">
+        <div class="modal-content">
+            <div class="container">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <p style="text-align: center;">Las siguientes preguntas son ejemplos de preguntas secundarias que se
+                    pueden hacer para el tema <b>cambio climático</b></p>
+
+                <ul>
+                    <li>¿Cuál es la relación entre los patrones de consumo y el cambio climático?</li>
+                    <li>¿El cambio climático se debe a las acciones humanas como la deforestación y sobrepoblación?</li>
+                    <li>¿Qué impacto tiene el cambio climático en las vidas humanas futuras y por qué es importante
+                        contemplarlo?</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+<!-- Core theme JS-->
+<script src="{%static 'js/MG1.js' %}"></script>
+<!-- JS para modal del ingresar código de clase-->
+<script src="{%static 'js/modal.js' %}"></script>
+{% endblock %}
+
+{% block footer %}
+<footer style=" margin-left: 0px;">
+    <p style="position: relative; width:100%; left: 0px; bottom: 0; width: 100%;  text-align: center; color: black;">
+        &copy; ICAT | UNAM</p>
+</footer>
+{% endblock %}

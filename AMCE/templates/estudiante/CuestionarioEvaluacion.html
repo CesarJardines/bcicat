@@ -1,0 +1,86 @@
+{% extends "estudiante/base_mainpage.html" %}
+
+{% load static %}
+
+{% block title %}
+Pregunta Inicial
+{% endblock %}
+
+{% block header_ctxt %}
+<div class="nav-bar-title navbar-brand ml-3">Preguntas secundarias</div>
+<a class=""></a>
+{% endblock %}
+
+{% block inner_content %}
+<div class="container-content">
+    <h1 class="text-center mt-4">A continuación evalua según el cumplimiento de cada uno de los siguientes puntos</h1>
+    <h3 class="mt-4">¿Cuál es la importancia de la fotosintesis?</h3>
+
+    <div class="d-flex mt-3">
+        <button type="submit" class="button-format">No se cumplio</button>
+        <button type="submit" class="button-format">No lose</button>
+        <button type="submit" class="button-format">Se cumplio</button>
+    </div>
+
+    <h3 class="mt-4">¿Cuál es la importancia de la fotosintesis?</h3>
+
+    <div class="d-flex mt-3">
+        <button type="submit" class="button-format">No se cumplio</button>
+        <button type="submit" class="button-format">No lose</button>
+        <button type="submit" class="button-format">Se cumplio</button>
+    </div>
+
+    <h3 class="mt-4">¿Cuál es la importancia de la fotosintesis?</h3>
+
+    <div class="d-flex mt-3">
+        <button type="submit" class="button-format">No se cumplio</button>
+        <button type="submit" class="button-format">No lose</button>
+        <button type="submit" class="button-format">Se cumplio</button>
+    </div>
+
+    <div class="d-flex justify-content-center mt-4">
+        <button type="submit" class="button-format">Guardar y continuar</button>
+    </div>
+
+
+</div>
+<!-- Modal a desplegar de ingresar código de clase -->
+
+
+<div id="myModal" class="modal" id="id01">
+    <!-- contenido del modal (ingresar código) -->
+    <div class="h-full d-flex flex-column  justify-content-center">
+        <div class="modal-content">
+            <div class="container">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <p style="text-align: center;">Las siguientes preguntas son ejemplos de preguntas secundarias que se
+                    pueden hacer para el tema <b>cambio climático</b></p>
+
+                <ul>
+                    <li>¿Cuál es la relación entre los patrones de consumo y el cambio climático?</li>
+                    <li>¿El cambio climático se debe a las acciones humanas como la deforestación y sobrepoblación?</li>
+                    <li>¿Qué impacto tiene el cambio climático en las vidas humanas futuras y por qué es importante
+                        contemplarlo?</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+<!-- Core theme JS-->
+<script src="{%static 'js/MG1.js' %}"></script>
+<!-- JS para modal del ingresar código de clase-->
+<script src="{%static 'js/modal.js' %}"></script>
+{% endblock %}
+
+{% block footer %}
+<footer style=" margin-left: 0px;">
+    <p style="position: relative; width:100%; left: 0px; bottom: 0; width: 100%;  text-align: center; color: black;">
+        &copy; ICAT | UNAM</p>
+</footer>
+{% endblock %}

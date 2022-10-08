@@ -1,0 +1,86 @@
+{% extends "estudiante/base_mainpage.html" %}
+
+{% load static %}
+
+{% block title %}
+Preguntas Secundarias
+{% endblock %}
+
+{% block header_ctxt %}
+<div class="nav-bar-title navbar-brand ml-3 d-flex w-full justify-content-center"> Preguntas Secundarias</div>
+<a class=""></a>
+{% endblock %}
+
+{% block inner_content %}
+<div class="container-content">
+    <h2 class="text-center mt-4">Para el tema {{ temaNombre }}, la pregunta inicial es: {{pregunta.id_pregunta.contenido }}</h2>
+
+    <div class="text-center ">
+        <h2>Plantea {{ noPreguntasSec }} preguntas secundarias</h2>
+        <h3 class="popup h mt-2" id="myBtn">Ejemplo</h3>
+        <br>
+        <form method="post" class="position-relative mt-2">
+            {% csrf_token %}
+            {% for i in range %}
+            <input class="mb-3" type="text" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                name="preguntaSecundaria" placeholder="¿Esta es mi pregunta secundaria? " required>
+            {% endfor %}
+            <div class="d-flex justify-content-end">
+                <button type="submit" class="button-format">Continuar al siguente paso</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Modal a desplegar de ingresar código de clase -->
+
+
+<div id="myModal" class="modal" id="id01">
+    <!-- contenido del modal (ingresar código) -->
+    <div class="h-full d-flex flex-column  justify-content-center">
+        <div class="modal-content">
+            <div class="container">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <p style="text-align: center;">Las siguientes preguntas son ejemplos de preguntas secundarias que se
+                    pueden hacer para el tema <b>cambio climático</b></p>
+
+                <ul>
+                    <li>¿Cuál es la relación entre los patrones de consumo y el cambio climático?</li>
+                    <li>¿El cambio climático se debe a las acciones humanas como la deforestación y sobrepoblación?</li>
+                    <li>¿Qué impacto tiene el cambio climático en las vidas humanas futuras y por qué es importante
+                        contemplarlo?</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function () { $("#myModal2").appendTo("body").modal('show'); });
+    $("#myModal2").css("z-index", "1500");
+
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+<!-- Core theme JS-->
+<script src="{%static 'js/MG1.js' %}"></script>
+<!-- JS para modal del ingresar código de clase-->
+<script src="{%static 'js/modal.js' %}"></script>
+{% endblock %}
+
+{% block footer %}
+<footer style=" margin-left: 0px;">
+    <p style="position: relative; width:100%; left: 0px; bottom: 0; width: 100%;  text-align: center; color: black;">
+        &copy; ICAT | UNAM</p>
+</footer>
+{% endblock %}

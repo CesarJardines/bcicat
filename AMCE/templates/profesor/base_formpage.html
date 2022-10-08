@@ -1,0 +1,38 @@
+{% extends "profesor/base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8 col-sm-10">
+        {% if messages %}
+        {% for message in messages %}
+        <div {% if message.tags %} class="alert {{ message.tags }}" {% else %} class="alert alert-info" {% endif %}>
+            <button type="button" class="close" data-dismiss="alert"> × </button>
+            <strong>{{message}}</strong>
+        </div>
+        {% endfor %}
+    {% endif %}
+        <form method="post" action="">
+            {% block form-title %}{% endblock %}
+            {% block form-button %}{% endblock %}
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="fieldWrapper mt-3">
+                    {% for error in field.errors %} 
+                        <div class="form-alert alert alert-danger">
+                                <strong>{{ error|escape }}</strong>
+                        </div>
+                    {% endfor %}
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {% if field.help_text %}
+                    <p class="help">{{ field.help_text|safe }}</p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        <button type="submit" class="button-format w-full mt-4" id="submit-form" >{% block button_content %}{% endblock %}</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
